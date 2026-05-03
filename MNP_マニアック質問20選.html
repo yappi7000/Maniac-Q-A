@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MNP マニアック質問20選</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0E0E12;
+  --s1: #16161C;
+  --s2: #1E1E26;
+  --border: rgba(255,255,255,0.07);
+  --text: #F0EFE8;
+  --sub: #8A8880;
+  --muted: #4A4A48;
+  --blue: #60A5FA;
+  --blue-d: #1E3A5F;
+  --green: #34D399;
+  --green-d: #0D2D1E;
+  --gold: #FBBF24;
+  --gold-d: #2D1E00;
+  --red: #F87171;
+  --red-d: #2D0A0A;
+  --purple: #A78BFA;
+  --purple-d: #1E1240;
+  --teal: #2DD4BF;
+  --teal-d: #0A2028;
+  --orange: #FB923C;
+  --orange-d: #2D1200;
+  --pink: #F472B6;
+  --pink-d: #2D0A1E;
+  --mono: 'DM Mono', monospace;
+}
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); padding: 2rem 1rem 6rem; line-height: 1.7; }
+.page { max-width: 700px; margin: 0 auto; }
+
+/* HERO */
+.hero {
+  background: var(--s1);
+  border: 0.5px solid var(--border);
+  border-radius: 22px;
+  padding: 2.5rem 1.75rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--green), var(--gold));
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--sub);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero-title { font-size: clamp(22px,5vw,32px); font-weight: 900; line-height: 1.2; margin-bottom: 0.875rem; }
+.hero-title .num { color: var(--gold); }
+.hero-desc { font-size: 13px; color: var(--sub); line-height: 1.8; margin-bottom: 1.5rem; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.h-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 0.5px solid rgba(255,255,255,0.12);
+  color: var(--sub);
+}
+
+/* CATEGORY LABELS */
+.cat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2.5rem 0 1rem;
+}
+.cat-row::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+.cat-badge {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Q&A CARD */
+.qa-card {
+  background: var(--s1);
+  border: 0.5px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.qa-card:hover { border-color: rgba(255,255,255,0.12); }
+
+.qa-q {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 1.1rem 1.35rem 0.875rem;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--s2);
+}
+.q-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+.q-label { font-size: 14px; font-weight: 700; line-height: 1.5; }
+
+.qa-a { padding: 1.1rem 1.35rem; }
+.a-main { font-size: 13.5px; color: var(--sub); line-height: 1.9; margin-bottom: 0; }
+.a-main strong { color: var(--text); font-weight: 600; }
+
+.a-box {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  line-height: 1.75;
+}
+.a-rows { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.a-row { display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--sub); line-height: 1.7; }
+.a-row strong { color: var(--text); font-weight: 600; }
+.a-dot { flex-shrink: 0; margin-top: 3px; font-size: 11px; color: var(--muted); }
+
+.src-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: var(--s2);
+  padding: 3px 8px;
+  border-radius: 99px;
+  border: 0.5px solid var(--border);
+}
+
+/* カラーバリエーション */
+.c-blue .q-num { background: var(--blue-d); color: var(--blue); }
+.c-green .q-num { background: var(--green-d); color: var(--green); }
+.c-gold .q-num { background: var(--gold-d); color: var(--gold); }
+.c-red .q-num { background: var(--red-d); color: var(--red); }
+.c-purple .q-num { background: var(--purple-d); color: var(--purple); }
+.c-teal .q-num { background: var(--teal-d); color: var(--teal); }
+.c-orange .q-num { background: var(--orange-d); color: var(--orange); }
+.c-pink .q-num { background: var(--pink-d); color: var(--pink); }
+
+.b-blue { background: rgba(96,165,250,0.07); border: 0.5px solid rgba(96,165,250,0.15); color: #93C5FD; }
+.b-green { background: rgba(52,211,153,0.07); border: 0.5px solid rgba(52,211,153,0.15); color: #6EE7B7; }
+.b-gold { background: rgba(251,191,36,0.07); border: 0.5px solid rgba(251,191,36,0.15); color: #FCD34D; }
+.b-red { background: rgba(248,113,113,0.08); border: 0.5px solid rgba(248,113,113,0.15); color: #FCA5A5; }
+.b-purple { background: rgba(167,139,250,0.07); border: 0.5px solid rgba(167,139,250,0.15); color: #C4B5FD; }
+.b-teal { background: rgba(45,212,191,0.07); border: 0.5px solid rgba(45,212,191,0.15); color: #5EEAD4; }
+.b-orange { background: rgba(251,146,60,0.07); border: 0.5px solid rgba(251,146,60,0.15); color: #FDBA74; }
+.b-pink { background: rgba(244,114,182,0.07); border: 0.5px solid rgba(244,114,182,0.15); color: #F9A8D4; }
+
+.cat-blue { background: var(--blue-d); color: var(--blue); }
+.cat-green { background: var(--green-d); color: var(--green); }
+.cat-gold { background: var(--gold-d); color: var(--gold); }
+.cat-red { background: var(--red-d); color: var(--red); }
+.cat-purple { background: var(--purple-d); color: var(--purple); }
+.cat-teal { background: var(--teal-d); color: var(--teal); }
+.cat-orange { background: var(--orange-d); color: var(--orange); }
+
+@media (max-width: 480px) {
+  .hero { padding: 2rem 1.25rem 1.5rem; }
+  .qa-q, .qa-a { padding: 0.875rem 1rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-tag">実際のLINEグループから厳選</p>
+  <h1 class="hero-title">MNP マニアック質問<span class="num">20</span>選</h1>
+  <p class="hero-desc">
+    初心者〜中級者がリアルに迷った「現場の質問」だけを厳選。<br>
+    ネットに載っていない、グループチャットだから出てきたディープな回答集。
+  </p>
+  <div class="hero-tags">
+    <span class="h-tag">弾・回線管理</span>
+    <span class="h-tag">ブラック・喪明け</span>
+    <span class="h-tag">利用者登録</span>
+    <span class="h-tag">維持戦略</span>
+    <span class="h-tag">量販店攻略</span>
+    <span class="h-tag">稼働確認</span>
+    <span class="h-tag">名義・家族</span>
+    <span class="h-tag">光・電気セット</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 1: 弾・回線管理 ===== -->
+<div class="cat-row"><span class="cat-badge cat-blue">🔵 弾・回線管理</span></div>
+
+<!-- Q1 -->
+<div class="qa-card c-blue">
+  <div class="qa-q">
+    <span class="q-num">Q01</span>
+    <p class="q-label">楽天モバイルのSMS認証コードは使い回しできる？短時間で複数回線の予約番号を出す方法は？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      楽天モバイルでMNP予約番号を複数回線連続で発行する場合、<strong>最初の1回のSMS認証コードを使い回しできる可能性が高い</strong>。短時間で連続して予約番号を出す場合、2回線目以降は通信しなくても同じ認証番号で通ることがある。
+    </p>
+    <div class="a-box b-blue">
+      <strong>ただし注意：</strong>楽天は2026年現在、<strong>6〜10回線目から事務手数料がかかりはじめる</strong>仕様に変更されつつあるため、楽天弾は優先的に早めに作成しておくこと。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qa-card c-blue">
+  <div class="qa-q">
+    <span class="q-num">Q02</span>
+    <p class="q-label">日本通信はeSIMをダウンロードしなくても予約番号が発行できる？通信なしでOK？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>可能。</strong>日本通信はeSIMや物理SIMを端末に入れ込まなくても、以前のキャリアからの切替処理（MNP転入）さえ完了していれば予約番号の発行ができる。マイページから通信不要で発行できる。
+    </p>
+    <div class="a-box b-blue">
+      SMSの受け取りが必要な場合は、コード認証後にeSIMを消してしまっても問題なし。<strong>「予約番号さえ出せれば弾としての役割は完了」</strong>という考え方でOK。
+    </div>
+    <div class="a-box b-gold" style="margin-top:6px;">
+      <strong>複数回線の弾不足対策（優先順位）：</strong><br>
+      日本通信5回線 → ポケSIM5回線 → リンクスメイト3〜5（d回線）→ IIJ5（au回線）→ NUROモバイル（SB回線、日数かかる）
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qa-card c-blue">
+  <div class="qa-q">
+    <span class="q-num">Q03</span>
+    <p class="q-label">Google Pixel 8aは何枚までeSIMを同時に入れられる？楽天・日本通信は何回線まで同時に入る？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>Pixel 8aはeSIMを8個まで同時保存できる。</strong>楽天モバイルはiPhoneなら同時10枚程度まで対応。日本通信も複数のeSIMを同時保存可能。mineo（マイネオ）は1つずつしか入らない仕様。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">▸</span><span><strong>Pixel 8a：</strong>eSIM最大8枚</span></div>
+      <div class="a-row"><span class="a-dot">▸</span><span><strong>楽天（iPhone）：</strong>同時10枚程度まで</span></div>
+      <div class="a-row"><span class="a-dot">▸</span><span><strong>日本通信：</strong>複数枚対応</span></div>
+      <div class="a-row"><span class="a-dot">▸</span><span><strong>mineo：</strong>1枚ずつしか入らない</span></div>
+    </div>
+    <div class="a-box b-blue" style="margin-top:8px;">
+      回線の月1稼働確認には<strong>物理SIMを複数枚刺せるスロット付き端末</strong>が便利。AliExpressで購入可能。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 2: ブラック・維持期間 ===== -->
+<div class="cat-row"><span class="cat-badge cat-red">🔴 ブラック・維持期間</span></div>
+
+<!-- Q4 -->
+<div class="qa-card c-red">
+  <div class="qa-q">
+    <span class="q-num">Q04</span>
+    <p class="q-label">UQ→povoへの移行は「短期解約」扱いになる？同じKDDI内なのになぜブラックになるのか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      UQ→povoの移行について、<strong>現場では意見が分かれている。</strong>「同じKDDIなので短期解約扱いにはならない」という実体験報告がある一方で、「2回転目以降で総合（ブラック）になった」という報告も存在する。
+    </p>
+    <div class="a-box b-red">
+      <strong>2026年最新の認識：</strong>auで契約したらauのままが最も安全。UQ→povoの即移行は「短期解約と同等のリスク」があるとされており、181日以上維持してからの移行が推奨されている。3回転目以降は特に注意。
+    </div>
+    <div class="a-box b-gold" style="margin-top:6px;">
+      総合（ブラック）になった場合の<strong>喪明け目安は半年〜1年</strong>。喪明け直後にまたすぐpovoに乗り換えると再び総合になりやすいため、過去と<strong>別の店舗でトライ</strong>するのが有効。
+    </div>
+    <span class="src-tag">📂 初心者スマホ乗り換えオフチャ / アテナ講座より</span>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qa-card c-red">
+  <div class="qa-q">
+    <span class="q-num">Q05</span>
+    <p class="q-label">UQ「無限MNP」をやると91日の待機期間が生まれる。povoに乗り換えるとこれを突破できるのは本当か？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>本当。</strong>UQは一度MNP転出すると次の新規契約まで91日の待機期間がある。しかしpovoに乗り換えてからUQへMNPすると、<strong>この91日制限を突破できる</strong>のが裏技。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">①</span><span>UQで3〜5回線MNP → povo経由 → UQに再MNP（91日不要）</span></div>
+      <div class="a-row"><span class="a-dot">②</span><span>新規契約なら91日待たずに直接入れる（MNP3本＋新規2本の5本同時も可）</span></div>
+      <div class="a-row"><span class="a-dot">③</span><span>5本をpovoにすれば、またUQの枠がまるまる開く</span></div>
+    </div>
+    <div class="a-box b-red" style="margin-top:8px;">
+      <strong>注意：</strong>弾に使うSIMは<strong>全て12歳以上の名義</strong>であることが必須条件。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="qa-card c-red">
+  <div class="qa-q">
+    <span class="q-num">Q06</span>
+    <p class="q-label">3ヶ月非稼働→解約→新規 と 3ヶ月非稼働→他社MNP→弾作成→Y/SへMNP、どちらが正しいフローか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>②のMNPフローが正解。</strong>新規契約はCBが少ない。MNPでの乗り換えのほうがキャッシュバックが大きい。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">❌</span><span><strong>①（解約→新規）：</strong>新規CBは少ない。非稼働で審査リスクも残る。</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>②（他社MNP→弾作成→Y/SへMNP）：</strong>MNPのほうがCBが多く出る。稼働確認済みなら②一択。</span></div>
+    </div>
+    <div class="a-box b-red" style="margin-top:8px;">
+      <strong>稼働確認について：</strong>3ヶ月以上の完全非稼働のまま解約→新規は審査に影響する可能性あり。8月・11月など2〜3ヶ月に1回は稼働確認を実施しておくこと。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qa-card c-red">
+  <div class="qa-q">
+    <span class="q-num">Q07</span>
+    <p class="q-label">ドコモのブラック確認方法はある？ahamoで初月解約してiPhone16を持っている状態は何年ブラックになるか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      ドコモのブラック状況を事前に確認する正式な手段はない。<strong>実際に申し込んでみて審査結果で判断するしかない</strong>のが現状。
+    </p>
+    <div class="a-box b-red">
+      ahamoで初月解約した場合の影響は<strong>ケースバイケース</strong>だが、家族や夫婦など複数名義で同時にやった場合は「組織的な短期解約」とみなされるリスクが高くなる。<br><br>
+      量販店は<strong>91日が最低維持ライン</strong>。ショップ（代理店）は<strong>N+7ヶ月維持</strong>が推奨。稼働確認なしの3ヶ月非稼働→解約は審査に影響する可能性あり。
+    </div>
+    <span class="src-tag">📂 初心者スマホ乗り換えオフチャより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 3: 利用者・名義登録 ===== -->
+<div class="cat-row"><span class="cat-badge cat-green">🟢 利用者・名義登録</span></div>
+
+<!-- Q8 -->
+<div class="qa-card c-green">
+  <div class="qa-q">
+    <span class="q-num">Q08</span>
+    <p class="q-label">0歳・2歳の子供でも楽天モバイルの名義人や利用者として登録して回線数を稼げるのか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>楽天モバイルは0歳でも名義人として契約可能。</strong>実際に0歳名義で10回線作れたという実績報告もある。
+    </p>
+    <div class="a-box b-green">
+      <strong>ただし必須条件：</strong>楽天・ポケSIM・日本通信・mineo など弾として使うSIMは<strong>全て12歳以上の名義</strong>でなければならない。au/ワイモバイル/ドコモの本案件にMNPする際の「弾」は12歳以上が必須。楽天の名義自体は0歳でも可能だが、弾として機能させるには12歳以上であること。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qa-card c-green">
+  <div class="qa-q">
+    <span class="q-num">Q09</span>
+    <p class="q-label">子供3人がいる場合、UQの利用者登録に使えるか？中学生名義でも利用者OK？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>可能。</strong>UQは自分名義で2回線まで。3回線目以降は利用者登録が必要で、<strong>同苗字または同住所の方を利用者に設定</strong>できる。中学生（12歳以上）でも利用者として登録可能。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">•</span><span>「携帯3回線なんで多いの？」と聞かれたら「ゲーム用・勉強用・タブレット用」など説明すればOK</span></div>
+      <div class="a-row"><span class="a-dot">•</span><span>利用者への連絡・郵送物は一切なし。利用者が別で携帯を契約する際の支障もなし</span></div>
+      <div class="a-row"><span class="a-dot">•</span><span>UQのCB受取は<strong>同一利用者で180日以内に複数店舗での重複受取は不可</strong>（SB・YMは別店舗でも可）</span></div>
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qa-card c-green">
+  <div class="qa-q">
+    <span class="q-num">Q10</span>
+    <p class="q-label">父の再婚相手（戸籍上は他人・住所も苗字も違う）を利用者や主契約として使えるか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>使えない。</strong>戸籍上の血縁関係がなく、住所も苗字も異なる場合は「他人」扱いとなり、利用者・使用者の登録は不可。
+    </p>
+    <div class="a-box b-red">
+      利用者登録は「同苗字 or 同住所」のどちらかを満たす必要がある。両方異なる場合はどのキャリアでも利用者設定は不可。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="qa-card c-green">
+  <div class="qa-q">
+    <span class="q-num">Q11</span>
+    <p class="q-label">夫名義の回線を妻が代わりに来店してMNPできるか？名義変更と乗り換えを同時にする方法は？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>可能。</strong>大手キャリア（UQ・YM・ドコモ・au・SB）は乗り換えと同時に名義変更ができる。切断型MNPで予約番号を発行後、2週間以内であれば乗り換え先で名義変更も同時に完了できる。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">📄</span><span><strong>必要書類：</strong>名義元（夫）のマイナンバーカードまたは免許証コピー ＋ 直筆の委任状</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span>夫の来店は不要。妻が書類を持参すれば完結</span></div>
+      <div class="a-row"><span class="a-dot">❌</span><span>povo・楽天・日本通信は乗り換えと同時の名義変更は不可</span></div>
+    </div>
+    <div class="a-box b-teal" style="margin-top:8px;">
+      <strong>応用：</strong>自分名義のポケSIMを作って委任状と本人確認書類コピーを配偶者に渡せば、配偶者が来店して自分名義→配偶者名義での乗り換えが完結する。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 4: 量販店・案件攻略 ===== -->
+<div class="cat-row"><span class="cat-badge cat-gold">🟡 量販店・案件攻略</span></div>
+
+<!-- Q12 -->
+<div class="qa-card c-gold">
+  <div class="qa-q">
+    <span class="q-num">Q12</span>
+    <p class="q-label">「切断型MNP」とは何か？通常のMNPとどう違うのか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>切断型MNP</strong>とは、今の回線を保持したまま乗り換え先でMNP転入するのではなく、<strong>今の回線から先に予約番号を発行（転出申請）してから次の乗り換え先へ持ち込む</strong>方法。
+    </p>
+    <div class="a-box b-gold">
+      通常のMNPは「今使っている回線を引っ張る」だが、切断型は「先に番号を切り出してから入れる」イメージ。複数回線を同時に動かしたい場合や、維持期間が終わった回線を一括で動かす際に有効。乗り換え先でCBをもらいながら、新しい弾になる番号を整理できる。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qa-card c-gold">
+  <div class="qa-q">
+    <span class="q-num">Q13</span>
+    <p class="q-label">量販店で「乗り換え元のマイページを確認する」スタッフに当たった場合どうする？ポケSIM速射が通らなくなっている？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>店舗・スタッフガチャの問題。</strong>乗り換え元キャリアのマイページ確認を求めるスタッフは増えており、ポケSIMなどの速射弾が使えない店舗も出てきている。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">❌</span><span><strong>エディオン（愛知）：</strong>乗り換え元キャリアのマイページ確認が必須の店舗が多い</span></div>
+      <div class="a-row"><span class="a-dot">⚠️</span><span><strong>ヤマダ電機（関東）：</strong>ティーガイア系代理店は比較的対応良好との報告あり</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>ジョーシン（愛知）：</strong>「素人感」を出してフレンドリーに話しかけると教えてくれることがある</span></div>
+    </div>
+    <div class="a-box b-gold" style="margin-top:8px;">
+      基本は<strong>電話よりも来店が推奨。</strong>電話ではCB額をほぼ教えてくれない。来店して直接確認が最短ルート。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qa-card c-gold">
+  <div class="qa-q">
+    <span class="q-num">Q14</span>
+    <p class="q-label">SBとYMは1住所に何回線登録するとインセンティブが入らなくなる？手配師を使う際の限界ラインは？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      ソフトバンク（SB）は、<strong>1住所に対して規定回線数以上の登録があると代理店に連絡が入り</strong>、不正契約とみなされてインセンティブが停止されるケースがある。
+    </p>
+    <div class="a-box b-gold">
+      現場の感覚として<strong>「SY（SB+YM）合計4回線まで」</strong>が代理店が受けられるギリギリのラインとされている。それ以上は手配師側がリスクを取れないため断られることが多い。案件の手配師案件は「SB5本・YM5本は制度上できるが、代理店ごとのマーク状況による」というのが実態。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 5: 光・電気・セット割 ===== -->
+<div class="cat-row"><span class="cat-badge cat-teal">🩵 光・電気・セット割</span></div>
+
+<!-- Q15 -->
+<div class="qa-card c-teal">
+  <div class="qa-q">
+    <span class="q-num">Q15</span>
+    <p class="q-label">ソフトバンク光を既に契約している場合、光回線なしでSIMだけの案件でもおうち割（セット割）は適用されるのか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>適用される。</strong>すでに自宅にソフトバンク光があれば、新たに光を追加契約しなくてもSIM案件でおうち割（セット割）が受けられる。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">✅</span><span>ショップでセット割の申告をすることが必要。黙っていると適用されないことがある</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span>au電気・ソフトバンク電気も既存契約があれば紐付けることでCB増が受けられる</span></div>
+      <div class="a-row"><span class="a-dot">⚠️</span><span>光回線・電気は「キャンセルしていない」ことが条件。解約・キャンセル済みの場合は不可</span></div>
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="qa-card c-teal">
+  <div class="qa-q">
+    <span class="q-num">Q16</span>
+    <p class="q-label">ソフトバンク光「安心乗り換えパック」は6ヶ月より前に解約するとCBが入らない？3ヶ月無料期間中に解約したら料金請求される？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      安心乗り換えパックのCB適用は<strong>6ヶ月後の日付で確定</strong>する。その日より前に解約すると受け取れない。基本は<strong>SBひかりは6ヶ月維持推奨。</strong>
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>3ヶ月無料期間中の解約：</strong>3ヶ月目を過ぎていれば無料分の請求はなし</span></div>
+      <div class="a-row"><span class="a-dot">⚠️</span><span>モバイルは解約月まで割引が適用されるが、<strong>固定回線は対象外</strong>の場合もある</span></div>
+      <div class="a-row"><span class="a-dot">❌</span><span>SBひかりでブラックになるとセット割・特典が全て受けられなくなる。デメリット大</span></div>
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 6: データ化・プラン変更 ===== -->
+<div class="cat-row"><span class="cat-badge cat-purple">🟣 データ化・プラン変更</span></div>
+
+<!-- Q17 -->
+<div class="qa-card c-purple">
+  <div class="qa-q">
+    <span class="q-num">Q17</span>
+    <p class="q-label">ドコモのiMoT（アイモット）やデータ化は今でも維持費削減に有効か？4/13のルール変更で何が変わった？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>2026年4月13日以降のルール変更により、現在はデータプラス・iMoTに切り替えるメリットがほぼなくなった。</strong>
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">❌</span><span>iMoT・データプランに変更しても維持費削減効果がほぼない</span></div>
+      <div class="a-row"><span class="a-dot">❌</span><span>最後はMNPができず<strong>解約しかできない</strong>という制約もある</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span>ドコモmini4G（音声プラン）のほうが現状のおすすめ維持プラン</span></div>
+      <div class="a-row"><span class="a-dot">⚠️</span><span>iMoTへの変更は店舗・スタッフによって「禁止」「知らない」対応があるため注意。変な店員に当たったら人・店舗を変える</span></div>
+    </div>
+    <div class="a-box b-purple" style="margin-top:8px;">
+      <strong>iMoT活用の唯一のメリット例：</strong>データプラスは、親回線を1GB未満に抑えれば子のデータプラスを30GB使っても親の利用料が増えない設計。これを活用したい場合のみ検討する価値がある。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="qa-card c-purple">
+  <div class="qa-q">
+    <span class="q-num">Q18</span>
+    <p class="q-label">ワイモバイルの「シンプルM」を2ヶ月以上続けるよう店員に言われた。翌日プラン変更してよいと言われた他の店との違いは何？どちらに従うべき？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      <strong>基本は来店した店舗の指示に従うのが正解。</strong>これは「代理店ごとのルール・インセンティブ条件の違い」によって生じる差。店によって翌日変更OKの場合と2ヶ月以上維持が条件の場合がある。
+    </p>
+    <div class="a-box b-purple">
+      <strong>なぜ従うべきか：</strong>代理店側のインセンティブ条件を守らないと、代理店がキャリアからペナルティを受けて最悪倒産するリスクがある。自分のCBをもらうためにも代理店が存続していることが必要なため、指示通りに動くのが長期的に得。<br><br>
+      <strong>ポイント：</strong>シンプルMでも1GB未満に抑えれば料金はシンプルLと変わらない（シンプル3では1GB未満割引廃止のため要確認）。
+    </div>
+    <span class="src-tag">📂 初心者スマホ乗り換えオフチャより</span>
+  </div>
+</div>
+
+<!-- ===== CATEGORY 7: 法人・上級者向け ===== -->
+<div class="cat-row"><span class="cat-badge cat-orange">🟠 法人・上級者向け</span></div>
+
+<!-- Q19 -->
+<div class="qa-card c-orange">
+  <div class="qa-q">
+    <span class="q-num">Q19</span>
+    <p class="q-label">法人でMNPをやる場合、弾は何がおすすめ？イオンモバイルやメルカリモバイルを弾にするリスクは？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      法人でも個人でも<strong>弾はポケSIM一択がベスト。</strong>理由はCICに履歴が残らず、速射してもブラックにならない設計で開発されているため。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">❌</span><span><strong>イオンモバイル：</strong>作業が面倒で短期解約でブラックになる危険がある</span></div>
+      <div class="a-row"><span class="a-dot">❌</span><span><strong>メルカリモバイル：</strong>速射するとメルカリアカウントが使えなくなるリスク。CIC（個人信用）に多少傷がつく履歴が残る</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>ポケSIM：</strong>CIC不問・速射ブラックなし・ドコモ回線で全キャリア対応</span></div>
+    </div>
+    <div class="a-box b-orange" style="margin-top:8px;">
+      <strong>法人CBの受け取り方：</strong>CBのみ社長の個人事業として受け取るなど、会社の仕訳が難しいため工夫が必要。法人SIM（イオンモバイル等）は弾としてのリスクが高いため避けるのが無難。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="qa-card c-orange">
+  <div class="qa-q">
+    <span class="q-num">Q20</span>
+    <p class="q-label">スマホ2年レンタル（残価設定）で3月以降の改悪：別キャリアに返却すると手数料22,000円。返却スキームはどう変わったのか？</p>
+  </div>
+  <div class="qa-a">
+    <p class="a-main">
+      2026年3月頃から、2年レンタル（残価設定プログラム）の返却先を<strong>「契約したキャリア以外に返すと22,000円の利用手数料が発生」</strong>するルールに改悪。
+    </p>
+    <div class="a-rows">
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>改悪前（2026年3月以前）に契約した端末：</strong>この変更の対象外。従来通り他社でも返却可能</span></div>
+      <div class="a-row"><span class="a-dot">⚠️</span><span><strong>改悪後の対応：</strong>22,000円払ってでも他社で機種購入するほうが、今まで通りCBの旨みが大きい場合がある</span></div>
+      <div class="a-row"><span class="a-dot">✅</span><span><strong>抜け道：</strong>YM・UQの端末（iPhone 16e・17e等）は22,000円の利用手数料がかからない。低スペックでよければこちらを活用</span></div>
+    </div>
+    <div class="a-box b-orange" style="margin-top:8px;">
+      <strong>現状の最適解：</strong>22,000円を払ってでも他社で高額CB案件の機種を購入するほうが収益が大きいケースが多い。端末の残価プログラムとCBの計算を毎回きちんと行うことが重要。
+    </div>
+    <span class="src-tag">📂 アテナ講座ノウハウQ&Aより</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;margin-top:3rem;font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--muted);">
+  MNP マニアック質問20選 ／ 実際のLINEグループQ&Aより厳選 ／ 2025〜2026年情報
+</div>
+
+</div>
+</body>
+</html>
